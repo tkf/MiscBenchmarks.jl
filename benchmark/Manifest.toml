@@ -68,7 +68,7 @@ uuid = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
 uuid = "ea8e919c-243c-51af-8825-aaa63cd721ce"
 
 [[SIMD]]
-git-tree-sha1 = "bbc72a6ee4499d7fbf22b8635e9cd36b7a98206f"
+git-tree-sha1 = "ddf8d11adb8c9c7cda850e9f699de50238cc09c6"
 repo-rev = "compressstore"
 repo-url = "https://github.com/tkf/SIMD.jl"
 uuid = "fdea26ae-647d-5447-a871-4b548cad5224"
