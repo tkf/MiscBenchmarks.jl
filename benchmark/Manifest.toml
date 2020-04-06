@@ -42,6 +42,7 @@ deps = ["Base64"]
 uuid = "d6f4376e-aef5-505a-96c1-9c027394607a"
 
 [[MiscBenchmarks]]
+deps = ["SIMD"]
 path = ".."
 uuid = "a3609e63-ce08-44ae-b805-38c77477d81a"
 version = "0.1.0"
@@ -65,6 +66,13 @@ uuid = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
 
 [[SHA]]
 uuid = "ea8e919c-243c-51af-8825-aaa63cd721ce"
+
+[[SIMD]]
+git-tree-sha1 = "bbc72a6ee4499d7fbf22b8635e9cd36b7a98206f"
+repo-rev = "compressstore"
+repo-url = "https://github.com/tkf/SIMD.jl"
+uuid = "fdea26ae-647d-5447-a871-4b548cad5224"
+version = "2.9.0"
 
 [[Serialization]]
 uuid = "9e88b42a-f829-5b0c-bbe9-9e923198166b"
