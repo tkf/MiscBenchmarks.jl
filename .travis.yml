@@ -22,12 +22,13 @@ install:
   - julia -e '
     using PkgBenchmark, BenchmarkCI;
     BenchmarkCI.judge(
-        PkgBenchmark.BenchmarkConfig(
+        target = PkgBenchmark.BenchmarkConfig(
             env = Dict(
                 "JULIA_NUM_THREADS" => "1",
                 "OMP_NUM_THREADS" => "1",
             ),
-        );
+        ),
+        baseline = "bcc914dc54da694b6986af9a4f1626f1678d7042",
     );
     '
 script:

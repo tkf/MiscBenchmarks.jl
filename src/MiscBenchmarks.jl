@@ -18,16 +18,10 @@ function compress_simd!(dest, pred, src, ::Val{N} = Val(4)) where {N}
     simd_bound = lastindex(src) - N + 1
     i = firstindex(src)
     j = firstindex(dest)
-    pdest = pointer(dest)
-    psrc = pointer(src)
-    ppred = pointer(pred)
-    # lanes = VecRange{N}(0)
+    lanes = VecRange{N}(0)
     @inbounds while i <= simd_bound
-        # mask = pred[lanes + i]
-        # vstorec(src[lanes + i], dest, j, mask)
-        x = vload(Vec{N,eltype(src)}, psrc + sizeof(eltype(src)) * (i - 1))
-        mask = vload(Vec{N,Bool}, ppred + sizeof(eltype(ppred)) * (i - 1))
-        vstorec(x, pdest + sizeof(eltype(dest)) * (j - 1), mask)
+        mask = pred[lanes + i]
+        vstorec(src[lanes + i], dest, j, mask)
         j += sum(mask)
         i += N
     end
